@@ -6,5 +6,6 @@ dojo ---> getModule
 
 
 # i18n
-edit with string like this "{0} must be a {1}."
-dojo.string.substituteNonStringValueInJSON(["r","p"])
+edit with string like this "{name} must be a {type}."
+dojo.string.substituteNonStringValueInJSON({name:"test",type: "string"})
+---> test must be a string
