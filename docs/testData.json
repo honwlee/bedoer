@@ -1,0 +1,8 @@
+// backend return data 
+{
+    "mailInfo": {
+        "AnswerDistApproveStepFlg": true,
+        "ImportanceJudgeGuideLink": "http://192.168.170.57:9080/navigator/plugin/EventHandlerPlugin/getResource/eventhandler/data/testData.json",
+        "DistributionSubjectFlgList": [1, 2, 3]
+    }
+}
