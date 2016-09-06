@@ -1,0 +1,919 @@
+{
+    "SCQM000E06": {
+        "desc": "一時保存",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserId": {
+                        "desc": "ユーザID",
+                        "propertyName": "UserId"
+                    },
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    },
+                    "CaseTypeName": {
+                        "desc": "ケース・タイプ名",
+                        "propertyName": "CaseTypeName"
+                    },
+                    "properties": true
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E06_HandlerBegin",
+            "handle": "SCQM000E06_Handler",
+            "end": "SCQM000E06_HandlerEnd"
+        }
+    },
+    "SCQM000E08": {
+        "desc": "ステップ完了",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserId": {
+                        "desc": "ユーザID",
+                        "propertyName": "UserId"
+                    },
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    },
+                    "CaseTypeName": {
+                        "desc": "ケース・タイプ名",
+                        "propertyName": "CaseTypeName"
+                    },
+                    "properties": true
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E08_HandlerBegin",
+            "handle": "SCQM000E08_Handler",
+            "end": "SCQM000E08_HandlerEnd"
+        }
+    },
+    "SCQM000E10": {
+        "desc": "担当選択",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    },
+                    "CaseTypeName": {
+                        "desc": "ケース・タイプ名",
+                        "propertyName": "CaseTypeName"
+                    },
+                    "properties": true
+                }
+            },
+            "output": {
+                "userInfo": {
+                    "UserIdList": {
+                        "desc": "ユーザIDリスト",
+                        "propertyName": "UserIdList"
+                    },
+                    "UserNameList": {
+                        "desc": "ユーザ名リスト",
+                        "propertyName": "UserNameList"
+                    },
+                    "OrganizationNameList": {
+                        "desc": "組織名リスト",
+                        "propertyName": "OrganizationNameList"
+                    },
+                    "PositionList": {
+                        "desc": "役職リスト",
+                        "propertyName": "PositionList"
+                    },
+                    "MailAddressList": {
+                        "desc": "メールアドレスリスト",
+                        "propertyName": "MailAddressList"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E10_HandlerBegin",
+            "handle": "SCQM000E10_Handler",
+            "end": "SCQM000E10_HandlerEnd"
+        }
+    },
+    "SCQM000E11": {
+        "desc": "審査承認経路情報取得",
+        "serviceCall": {
+            "method": "GET",
+            "url": "http://192.168.170.57:9080/navigator/plugin/EventHandlerPlugin/getResource/eventhandler/data/ExamAndApproval.json",
+            "input": {
+                "userInfo": {
+                    "UserId": {
+                        "desc": "ユーザID",
+                        "propertyName": "UserId"
+                    }
+                },
+                "examApproval": {
+                    "ExamAndApprovalRoutePatternName": {
+                        "desc": "経路パターン名",
+                        "propertyName": "ExamAndApprovalRoutePatternName"
+                    },
+                    "TargetWorkflowCd": {
+                        "desc": "対象ワークフローID",
+                        "propertyName": "TargetWorkflowCd"
+                    }
+                }
+            },
+            "output": {
+                "examApproval": {
+                    "ExamAndApprovalRoutePatternNameList": {
+                        "desc": "経路パターン名リスト",
+                        "propertyName": "ExamAndApprovalRoutePatternNameList"
+                    },
+                    "ExamAndApprovalTargetWorkflowList": {
+                        "desc": "対象ワークフローリスト",
+                        "propertyName": "ExamAndApprovalTargetWorkflowList"
+                    },
+                    "ExamUserIdList": {
+                        "desc": "審査者IDリスト",
+                        "propertyName": "ExamUserIdList"
+                    },
+                    "ExamUserNameList": {
+                        "desc": "審査者名リスト",
+                        "propertyName": "ExamUserNameList"
+                    },
+                    "ApprovalUserIdList": {
+                        "desc": "承認者IDリスト",
+                        "propertyName": "ApprovalUserIdList"
+                    },
+                    "ApprovalUserNameList": {
+                        "desc": "承認者名リスト",
+                        "propertyName": "ApprovalUserNameList"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E11_HandlerBegin",
+            "handle": "SCQM000E11_Handler",
+            "end": "SCQM000E11_HandlerEnd"
+        }
+    },
+    "SCQM000E14": {
+        "desc": "メールテンプレート作成",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    },
+                    "CaseTypeName": {
+                        "desc": "ケース・タイプ名",
+                        "propertyName": "CaseTypeName"
+                    },
+                    "properties": true
+                },
+                "mailInfo": {
+                    "MailTemplateID": {
+                        "desc": "メールテンプレートID",
+                        "propertyName": "MailTemplateID"
+                    }
+                }
+            },
+            "output": {
+                "mailInfo": {
+                    "DestinationAddress": {
+                        "desc": "送信先アドレス",
+                        "propertyName": "DestinationAddress"
+                    },
+                    "EmailSubject": {
+                        "desc": "メール件名",
+                        "propertyName": "EmailSubject"
+                    },
+                    "MailText": {
+                        "desc": "メール本文",
+                        "propertyName": "MailText"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E14_HandlerBegin",
+            "handle": "SCQM000E14_Handler",
+            "end": "SCQM000E14_HandlerEnd"
+        }
+    },
+    "SCQM000E17": {
+        "desc": "生産・仕様情報取得",
+        "serviceCall": {
+            "method": "GET",
+            "url": "http://192.168.170.57:9080/navigator/plugin/EventHandlerPlugin/getResource/eventhandler/data/productionInfos.json",
+            "input": {
+                "userInfo": false,
+                "caseinfo": false,
+                "productInfo": {
+                    "FPRKbnCd": {
+                        "desc": "FPR担当区分コード",
+                        "propertyName": "FPRKbnCd"
+                    },
+                    "VehicleNoVIN17": {
+                        "desc": "車番",
+                        "propertyName": "VehicleNoVIN17"
+                    },
+                    "EngNoProductSpec": {
+                        "desc": "ENGNo(生産仕様)",
+                        "propertyName": "EngNoProductSpec"
+                    },
+                    "EngTypeProductSpec": {
+                        "desc": "ENG型式(生産仕様)",
+                        "propertyName": "EngTypeProductSpec"
+                    }
+                }
+
+            },
+            "output": {
+                "productInfo": {
+                    "VehicleType3digit": {
+                        "desc": "車型コード３桁",
+                        "propertyName": "VehicleType3digit"
+                    },
+                    "SaleModelYear": {
+                        "desc": "販売年式",
+                        "propertyName": "SaleModelYear"
+                    },
+                    "ProductModelYear": {
+                        "desc": "生産年式",
+                        "propertyName": "ProductModelYear"
+                    },
+                    "EngTypeProductSpec": {
+                        "desc": "ENG型式(生産仕様)",
+                        "propertyName": "EngTypeProductSpec"
+                    },
+                    "TMTypeProductSpec": {
+                        "desc": "TM型式(生産仕様)",
+                        "propertyName": "TMTypeProductSpec"
+                    },
+                    "VehicleNoVIN17": {
+                        "desc": "車番",
+                        "propertyName": "VehicleNoVIN17"
+                    },
+                    "EngNoProductSpec": {
+                        "desc": "ENGNo(生産仕様)",
+                        "propertyName": "EngNoProductSpec"
+                    },
+                    "EngCdProductSpec": {
+                        "desc": "ENGコード(生産仕様)",
+                        "propertyName": "EngCdProductSpec"
+                    },
+                    "TMNoProductSpec": {
+                        "desc": "TMNo(生産仕様)",
+                        "propertyName": "TMNoProductSpec"
+                    },
+                    "TMCdProductSpec": {
+                        "desc": "TMコード(生産仕様)",
+                        "propertyName": "TMCdProductSpec"
+                    },
+                    "ProductDate": {
+                        "desc": "生産日(完成日)",
+                        "propertyName": "ProductDate"
+                    },
+                    "ShippingDate": {
+                        "desc": "船積日",
+                        "propertyName": "ShippingDate"
+                    },
+                    "VehicleProductCtrlSystemLink": {
+                        "desc": "車両生産管理システムリンク",
+                        "propertyName": "VehicleProductCtrlSystemLink"
+                    },
+                    "UOC": {
+                        "desc": "UOC",
+                        "propertyName": "UOC"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E17_HandlerBegin",
+            "handle": "SCQM000E17_Handler",
+            "end": "SCQM000E17_HandlerEnd"
+        }
+    },
+    "SCQM000E18": {
+        "desc": "リコール情報取得",
+        "serviceCall": {
+            "method": "GET",
+            "url": "http://192.168.170.57:9080/navigator/plugin/EventHandlerPlugin/getResource/eventhandler/data/RecallInformation.json",
+            "input": {
+                "recallInfo": {
+                    "VehicleNoVIN17": {
+                        "desc": "車番",
+                        "propertyName": "VehicleNoVIN17"
+                    }
+                }
+            },
+            "output": {
+                "recallInfo": {
+                    "RecallKbnList": {
+                        "desc": "リコール区分リスト",
+                        "propertyName": "RecallKbnList"
+                    },
+                    "RecallCtrlNoList": {
+                        "desc": "リコール管理番号リスト",
+                        "propertyName": "RecallCtrlNoList"
+                    },
+                    "RecallNotifyNoList": {
+                        "desc": "リコール通報番号リスト",
+                        "propertyName": "RecallNotifyNoList"
+                    },
+                    "RecallReportNoList": {
+                        "desc": "リコール届出番号リスト",
+                        "propertyName": "RecallReportNoList"
+                    },
+                    "RecallReportDateList": {
+                        "desc": "リコール届出日リスト",
+                        "propertyName": "RecallReportDateList"
+                    },
+                    "RecallReasonList": {
+                        "desc": "リコール理由リスト",
+                        "propertyName": "RecallReasonList"
+                    },
+                    "RecallReportDistCdList": {
+                        "desc": "リコール届出時販社コードリスト",
+                        "propertyName": "RecallReportDistCdList"
+                    },
+                    "RecallReprotBaseCdList": {
+                        "desc": "リコール届出時拠点コードリスト",
+                        "propertyName": "RecallReprotBaseCdList"
+                    },
+                    "RecallCompKbnList": {
+                        "desc": "リコール実施済区分リスト",
+                        "propertyName": "RecallCompKbnList"
+                    },
+                    "RecallStartDateList": {
+                        "desc": "リコール実施日リスト",
+                        "propertyName": "RecallStartDateList"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E18_HandlerBegin",
+            "handle": "SCQM000E18_Handler",
+            "end": "SCQM000E18_HandlerEnd"
+        }
+    },
+    "SCQM000E21": {
+        "desc": "現品ステータス戻し機能(管理者機能)",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E21_HandlerBegin",
+            "handle": "SCQM000E21_Handler",
+            "end": "SCQM000E21_HandlerEnd"
+        }
+    },
+    "SCQM000E26": {
+        "desc": "FPRステータス戻し機能（管理者用機能）",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E26_HandlerBegin",
+            "handle": "SCQM000E26_Handler",
+            "end": "SCQM000E26_HandlerEnd"
+        }
+    },
+    "SCQM000E29": {
+        "desc": "SAステータス戻し機能（管理者用機能）",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E29_HandlerBegin",
+            "handle": "SCQM000E29_Handler",
+            "end": "SCQM000E29_HandlerEnd"
+        }
+
+    },
+    "SCQM000E33": {
+        "desc": "ユーザー組織情報取得",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserId": {
+                        "desc": "ユーザID",
+                        "propertyName": "UserId"
+                    }
+                }
+            },
+            "output": {
+                "userInfo": {
+                    "OrganizationCode": {
+                        "desc": "所属部署コード",
+                        "propertyName": "OrganizationCode"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    },
+                    "Position": {
+                        "desc": "役職",
+                        "propertyName": "Position"
+                    },
+                    "MailAddress": {
+                        "desc": "メールアドレス",
+                        "propertyName": "MailAddress"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/CommonEventHandler",
+        "methods": {
+            "begin": "SCQM000E33_HandlerBegin",
+            "handle": "SCQM000E33_Handler",
+            "end": "SCQM000E33_HandlerEnd"
+        }
+    },
+
+    "SCQM001E02": {
+        "desc": "FPR自動作成(Excel読込)",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "formDocumentInfo": {
+                    "FileReadingDestinationPath": {
+                        "desc": "ファイル読込先",
+                        "propertyName": "FileReadingDestinationPath"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/FPREventHandler",
+        "methods": {
+            "begin": "SCQM001E02_HandlerBegin",
+            "handle": "SCQM001E02_Handler",
+            "end": "SCQM001E02_HandlerEnd"
+        }
+    },
+
+    "SCQM003E02": {
+        "desc": "重要度判定ガイド取得",
+        "serviceCall": {
+            "method": "GET",
+            "url": "http://192.168.170.57:9080/navigator/plugin/EventHandlerPlugin/getResource/eventhandler/data/testData.json",
+            "input": {
+                "userInfo": {
+                    "OrganizationCode": {
+                        "desc": "所属部署コード",
+                        "propertyName": "OrganizationCode"
+                    }
+                }
+            },
+            "output": {
+                "mailInfo": {
+                    "AnswerDistApproveStepFlg": {
+                        "desc": "社外回答販社承認ステップ要否",
+                        "propertyName": "AnswerDistApproveStepFlg"
+                    },
+                    "ImportanceJudgeGuideLink": {
+                        "desc": "重要度判定ガイドリンク",
+                        "propertyName": "ImportanceJudgeGuideLink"
+                    },
+                    "DistributionSubjectFlgList": {
+                        "desc": "付替対象フラグリスト",
+                        "propertyName": "DistributionSubjectFlgList"
+                    }
+                }
+            }
+        },
+        "module": "eventhandler/FPREventHandler",
+        "methods": {
+            "begin": "SCQM003E02_HandlerBeginBegin",
+            "handle": "SCQM003E02_HandlerEnd",
+            "end": "SCQM003E02_HandlerEndEnd"
+        }
+    },
+    "SCQM003E03": {
+        "desc": "現品送付状出力",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "file": true
+            }
+        },
+        "module": "eventhandler/FPREventHandler",
+        "methods": {
+            "begin": "SCQM003E03_HandlerBegin",
+            "handle": "SCQM003E03_Handler",
+            "end": "SCQM003E03_HandlerEnd"
+        }
+    },
+    "SCQM003E04": {
+        "desc": "FPRサマリー出力",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "file": true
+            }
+        },
+        "module": "eventhandler/FPREventHandler",
+        "methods": {
+            "begin": "SCQM003E04_HandlerBegin",
+            "handle": "SCQM003E04_Handler",
+            "end": "SCQM003E04_HandlerEnd"
+        }
+    },
+
+    "SCQM003E05": {
+        "desc": "同種候補リスト作成",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/FPRReviewEventHandler",
+        "methods": {
+            "begin": "SCQM003E05_HandlerBegin",
+            "handle": "SCQM003E05_Handler",
+            "end": "SCQM003E05_HandlerEnd"
+        }
+    },
+    "SCQM003E06": {
+        "desc": "同種候補リスト取込・入力チェック",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/FPRReviewEventHandler",
+        "methods": {
+            "begin": "SCQM003E06_HandlerBegin",
+            "handle": "SCQM003E06_Handler",
+            "end": "SCQM003E06_HandlerEnd"
+        }
+    },
+
+    "SCQM003E07": {
+        "module": "eventhandler/SACaseEventHandler",
+        "method": "SCQM003E07_Handler"
+    },
+    "SCQM003E08": {
+        "module": "eventhandler/SACaseEventHandler",
+        "method": "SCQM003E08_Handler"
+    },
+
+    "SCQM003E09": {
+        "module": "eventhandler/SAMeetingEventHandler",
+        "method": "SCQM003E09_Handler"
+    },
+    "SCQM003E10": {
+        "desc": "ノミネート完了リスト取込・入力チェック",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/SAMeetingEventHandler",
+        "methods": {
+            "begin": "SCQM003E10_HandlerBegin",
+            "handle": "SCQM003E10_Handler",
+            "end": "SCQM003E10_HandlerEnd"
+        }
+    },
+    "SCQM003E11": {
+        "module": "eventhandler/SAMeetingEventHandler",
+        "method": "SCQM003E11_Handler"
+    },
+    "SCQM003E12": {
+        "desc": "SA会議議事録取込・入力チェック",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/SAMeetingEventHandler",
+        "methods": {
+            "begin": "SCQM003E12_HandlerBegin",
+            "handle": "SCQM003E12_Handler",
+            "end": "SCQM003E12_HandlerEnd"
+        }
+    },
+
+    "SCQM003E13": {
+        "desc": "部品付替",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "userInfo": {
+                    "UserName": {
+                        "desc": "ユーザ名",
+                        "propertyName": "UserName"
+                    },
+                    "OrganizationName": {
+                        "desc": "所属部署名(組織名)",
+                        "propertyName": "OrganizationName"
+                    }
+                },
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                },
+                "mailInfo": {
+                    "DistributionSubjectFlgList": {
+                        "desc": "付替対象フラグリスト",
+                        "propertyName": "DistributionSubjectFlgList"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/ActualGootsEventHandler",
+        "methods": {
+            "begin": "SCQM003E13_HandlerBegin",
+            "handle": "SCQM003E13_Handler",
+            "end": "SCQM003E13_HandlerEnd"
+        }
+    },
+    "SCQM003E14": {
+        "desc": "現品サマリ出力",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "file": true
+            }
+        },
+        "module": "eventhandler/ActualGootsEventHandler",
+        "methods": {
+            "begin": "SCQM003E14_HandlerBegin",
+            "handle": "SCQM003E14_Handler",
+            "end": "SCQM003E14_HandlerEnd"
+        }
+    },
+    "SCQM003E15": {
+        "desc": "調査依頼書出力",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                },
+                "formDocumentInfo": {
+                    "FormID": {
+                        "desc": "帳票ID",
+                        "propertyName": "FormID"
+                    }
+                }
+            },
+            "output": {
+                "file": true
+            }
+        },
+        "module": "eventhandler/InvestigationEventHandler",
+        "methods": {
+            "begin": "SCQM003E15_HandlerBegin",
+            "handle": "SCQM003E15_Handler",
+            "end": "SCQM003E15_HandlerEnd"
+        }
+    },
+    "SCQM003E16": {
+        "desc": "クローズ審議会リスト取込・入力チェック",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/CloseCouncilEventHandler",
+        "methods": {
+            "begin": "SCQM003E16_HandlerBegin",
+            "handle": "SCQM003E16_Handler",
+            "end": "SCQM003E16_HandlerEnd"
+        }
+    },
+    "SCQM003E17": {
+        "desc": "一次調査進捗リスト取込・入力チェック",
+        "serviceCall": {
+            "method": "GET",
+            "url": "",
+            "input": {
+                "caseInfo": {
+                    "CaseId": {
+                        "desc": "ケースID",
+                        "propertyName": "CaseId"
+                    }
+                }
+            },
+            "output": {
+                "nothing": true
+            }
+        },
+        "module": "eventhandler/ProgressEventHandler",
+        "methods": {
+            "begin": "SCQM003E17_HandlerBegin",
+            "handle": "SCQM003E17_Handler",
+            "end": "SCQM003E17_HandlerEnd"
+        }
+    }
+}
